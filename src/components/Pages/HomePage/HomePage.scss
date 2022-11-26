@@ -1,0 +1,18 @@
+.current-client {
+  margin: 100px 0px 30px;
+  &__heading {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 42px;
+    letter-spacing: 0.25px;
+    margin-top: 56px;
+    margin-bottom: 28px;
+  }
+  &__btn {
+    display: flex;
+    justify-content: right;
+    margin-top: 16px;
+    border: none;
+    margin-left: auto;
+  }
+}

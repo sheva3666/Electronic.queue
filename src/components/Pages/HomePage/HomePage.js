@@ -1,46 +1,35 @@
 import React, { useState } from "react";
+import "./HomePage.scss";
 import NewClientTable from "../../NewClientTable/NewClientTable";
 import Table from "../../Table/Table";
 
 const HomePage = () => {
   const [clients, setClients] = useState([]);
-  const [newClient, setNewClient] = useState("");
   const [services, setServices] = useState([]);
-
-  const onAddClient = (e) => {
-    e.preventDefault();
-    const newClientItem = {
-      id: Date.now(),
-      FullName: newClient,
-      Status: 0,
-      dateTime: Date.now(),
-    };
-
-    setClients((prevState) => [...prevState, newClientItem]);
-    setNewClient("");
-  };
+  console.log("13123");
 
   const nextClient = () => {
-    setServices([clients[0]]);
-    clients.shift();
+    if (clients.length > 0) {
+      setServices([]);
+      setServices([clients[0]]);
+      clients.shift();
+    } else {
+      setServices([]);
+    }
   };
   return (
     <>
-      <div className="in-line">
+      <div className="current-client">
         <div className="container">
+            <h2 className="current-client__heading">Current client</h2>
           <Table clients={services} />
-          <button className="in-service__btn btn" onClick={nextClient}>
+          <button className="current-client__btn btn" onClick={nextClient}>
             Next client
           </button>
         </div>
       </div>
 
-      <NewClientTable
-        setNewClient={setNewClient}
-        newClient={newClient}
-        onAddClient={onAddClient}
-        clients={clients}
-      />
+      <NewClientTable clients={clients} setClients={setClients} />
     </>
   );
 };

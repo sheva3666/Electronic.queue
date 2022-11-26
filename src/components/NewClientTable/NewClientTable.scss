@@ -1,0 +1,22 @@
+.new-client {
+  &__heading {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 42px;
+    letter-spacing: 0.25px;
+    margin-top: 56px;
+    margin-bottom: 28px;
+  }
+
+  &__box {
+    padding: 16px 24px 16px 24px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    margin: 20px 0px 30px;
+
+    @media only screen and (max-width: 375px) {
+      padding: 0px 8px 16px;
+    }
+  }
+}

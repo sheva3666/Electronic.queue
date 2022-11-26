@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.scss";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -7,7 +8,9 @@ const Header = () => {
       <a href="">
         <img src="" alt="" />
       </a>
-      <h2>NICE LOGO</h2>
+      <Link className="header__logo" to={"/"}>
+        <h6>NICE LOGO</h6>
+      </Link>
     </div>
   );
 };

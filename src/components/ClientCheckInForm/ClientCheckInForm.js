@@ -5,26 +5,24 @@ const ClientCheckInForm = ({ onAddClient, newClient, setNewClient }) => {
   const inputChange = (e) => {
     setNewClient(e.target.value);
   };
+
   return (
-    <form className="in-line__form" onSubmit={onAddClient}>
-      <div className="in-line__form-box">
+    <form className="form" onSubmit={onAddClient}>
+      <div className="form__box">
+        <label> Name of the client you’re going to add in the line</label>
         <input
-          className="in-line__form-input"
+          className="form__input"
           value={newClient}
           onChange={inputChange}
           placeholder="Full name"
           type="text"
         />
-        <p className="in-line__form-info">
-          Name of the client you’re going to add in the line
-        </p>
       </div>
       <button
+        disabled={!newClient}
         type="submit"
         className={
-          newClient.length === 0
-            ? "in-line__form-btn btn"
-            : "in-service__btn btn"
+          newClient.length === 0 ? "form__btn btn" : "form__second-btn btn"
         }
       >
         + Add to the line
